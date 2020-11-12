@@ -4,6 +4,7 @@ import s from './Home.module.scss';
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
+import Parallax from "../../components/Parallax";
 
 
 const HomePage = () => {
@@ -24,6 +25,7 @@ const HomePage = () => {
             }>
                 See pokemons
             </Button>
+            <Parallax />
         </div> 
     );
 };
