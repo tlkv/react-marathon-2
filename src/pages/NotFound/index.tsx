@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../components/Button';
 import { navigate } from 'hookrouter';
 import s from './NotFoundPage.module.scss';
+import { LinkEnum } from '../../routes';
 
 const NotFoundPage = () => {
     return (
@@ -15,7 +16,7 @@ const NotFoundPage = () => {
                         <span>The rocket team</span> has won this time.
                      </div>
                     <Button
-                        onClick={() => navigate('/')}>
+                        onClick={() => navigate(LinkEnum.HOME)}>
                         Return
                          </Button>
                 </div>

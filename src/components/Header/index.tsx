@@ -2,12 +2,12 @@ import React from 'react';
 import { A, usePath } from 'hookrouter';
 import cn from 'classnames';
 import s from './Header.module.scss';
-/* import { Link } from 'react-router-dom'; */
+
 import Layout from '../Layout'
 
 import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg';
 
-import {GENERAL_MENU} from "../../routes";
+import { GENERAL_MENU } from "../../routes";
 
 interface IMenu {
     id: number
@@ -39,8 +39,8 @@ const MENU: IMenu[] = [
 ]
 
 const Header = () => {
-    const path=usePath();
-    
+    const path = usePath();
+    console.log("head TEST");
     return (
         <div className={s.root}>
             <Layout>
@@ -50,7 +50,7 @@ const Header = () => {
                     </div>
                     <div className={s.menuWrap}>
                         {
-                            GENERAL_MENU.map(({ title, link}) => (
+                            GENERAL_MENU.map(({ title, link }) => (
                                 <A
                                     key={title}
                                     href={link}
@@ -68,4 +68,4 @@ const Header = () => {
 };
 
 
-export default Header;
+export default React.memo(Header);

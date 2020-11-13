@@ -9,20 +9,19 @@ import Parallax from "../../components/Parallax";
 import Heading from '../../components/Heading';
 import { useHistory } from 'react-router-dom';
 import { navigate } from 'hookrouter';
+import { LinkEnum } from '../../routes';
 
 const HomePage = () => {
-    /* const h = useHistory(); */
+    
     return (
-        <div className={s.root}>
-            <Header />
+        <div className={s.root}>            
             <Layout className={s.contentWrap}>
                 <div className={s.contentText}>
                     <Heading tag="h1" className={s.contentTitle}>
                         <b>Find</b> all your favourite <b>Pokemons</b>
                     </Heading>
                     <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-                    <Button onClick={() => navigate('/pokedex')}>See pokemons</Button>
-                    {/* <Button onClick={() => h.push('/pokedex')}>See pokemons</Button> */}
+                    <Button onClick={() => navigate(LinkEnum.POKEDEX)}>See pokemons</Button>
                 </div>
                 <div className={s.contentParallax}>
                     <Parallax />
