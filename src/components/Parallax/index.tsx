@@ -26,6 +26,9 @@ const Parallax = () => {
         <div className={s.root}>
             <div
                 className={s.smallPokeBall}
+                style={{
+                    transform: `translate(${screenY * 0.02}px,${screenX * 0.02}px)`
+                }}
             >
                 <img src={SmallPokeBallPng} alt="Small PokeBall" />
             </div>

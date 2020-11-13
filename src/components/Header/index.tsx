@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './Header.module.scss';
+/* import { Link } from 'react-router-dom'; */
 
 import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg'; 
 
@@ -19,7 +20,7 @@ const MENU: IMenu[] = [
     {
         id: 2,
         value: 'Pokédex',
-        link: '#',
+        link: '/pokedex',
     },
     {
         id: 3,
