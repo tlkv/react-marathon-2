@@ -10,7 +10,7 @@ import Heading from '../../components/Heading';
 import { useHistory } from 'react-router-dom';
 
 const HomePage = () => {
-    const h = useHistory();
+    /* const h = useHistory(); */
     return (
         <div className={s.root}>
             <Header />
@@ -21,7 +21,7 @@ const HomePage = () => {
                     </Heading>
                     <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
                     <Button onClick={() => { }}>See pokemons</Button>
-                    <Button onClick={() => h.push('/pokedex')}>Test routing</Button>
+                    {/* <Button onClick={() => h.push('/pokedex')}>See pokemons</Button> */}
                 </div>
                 <div className={s.contentParallax}>
                     <Parallax />

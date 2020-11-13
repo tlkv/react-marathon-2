@@ -1,9 +1,13 @@
 import React from 'react';
+import { A, usePath } from 'hookrouter';
 import cn from 'classnames';
 import s from './Header.module.scss';
 /* import { Link } from 'react-router-dom'; */
+import Layout from '../Layout'
 
-import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg'; 
+import { ReactComponent as PokemonLogoSvg } from './assets/Logo.svg';
+
+import {GENERAL_MENU} from "../../routes";
 
 interface IMenu {
     id: number
@@ -15,7 +19,7 @@ const MENU: IMenu[] = [
     {
         id: 1,
         value: 'Home',
-        link: '#',
+        link: '/',
     },
     {
         id: 2,
@@ -35,22 +39,30 @@ const MENU: IMenu[] = [
 ]
 
 const Header = () => {
+    const path=usePath();
+    
     return (
         <div className={s.root}>
-            <div className={s.wrap}>
-                <div className={s.pokemonLogo}>
-                    <PokemonLogoSvg />
+            <Layout>
+                <div className={s.wrap}>
+                    <div className={s.pokemonLogo}>
+                        <PokemonLogoSvg />
+                    </div>
+                    <div className={s.menuWrap}>
+                        {
+                            GENERAL_MENU.map(({ title, link}) => (
+                                <A
+                                    key={title}
+                                    href={link}
+                                    className={cn(s.menuLink, {
+                                        [s.activeLink]: link === path,
+                                    })}>
+                                    { title}
+                                </A>
+                            ))}
+                    </div>
                 </div>
-                <div className={s.menuWrap}>
-                    {
-                        MENU.map(({ value, link, id }) => (
-                            <a key={id} href={link} className={s.menuLink}>
-                                { value}
-                            </a>
-                        ))
-                    }
-                </div>
-            </div>
+            </Layout>
         </div>
     );
 };
