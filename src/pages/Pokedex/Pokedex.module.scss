@@ -14,6 +14,7 @@
     padding: 0 20px;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -24,4 +25,11 @@
     text-align: center;
     letter-spacing: 3px;
     width: 100%;
+}
+
+.pokemonList {
+    position: relative;
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePage from "./pages/Home";
 import EmptyPage from "./pages/Empty";
+import PokedexNew from './pages/Pokedex';
 
 interface IGeneralMenu {
     title: string,
@@ -17,7 +18,7 @@ export const GENERAL_MENU: IGeneralMenu[] = [
     {
         title: 'Pokédex',
         link: '/pokedex',
-        component: () => <EmptyPage title="Pokedex" />
+        component: () => <PokedexNew />,
     },
     {
         title: 'Legendaries',
@@ -37,10 +38,10 @@ export const GENERAL_MENU: IGeneralMenu[] = [
 }, {}); */
 
 interface IAccMenu {
-    [n:string]: () => JSX.Element 
+    [n: string]: () => JSX.Element
 }
 
-const routes = GENERAL_MENU.reduce((acc: IAccMenu, item:IGeneralMenu) => {
+const routes = GENERAL_MENU.reduce((acc: IAccMenu, item: IGeneralMenu) => {
     acc[item.link] = item.component;
     return acc;
 }, {});

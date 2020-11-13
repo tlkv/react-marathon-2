@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../../components/Button';
 import { navigate } from 'hookrouter';
-import TeamRocket from './assets/teamRocket.png';
 import s from './NotFoundPage.module.scss';
 
 const NotFoundPage = () => {

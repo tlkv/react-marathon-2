@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 import Parallax from "../../components/Parallax";
 import Heading from '../../components/Heading';
 import { useHistory } from 'react-router-dom';
+import { navigate } from 'hookrouter';
 
 const HomePage = () => {
     /* const h = useHistory(); */
@@ -20,7 +21,7 @@ const HomePage = () => {
                         <b>Find</b> all your favourite <b>Pokemons</b>
                     </Heading>
                     <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-                    <Button onClick={() => { }}>See pokemons</Button>
+                    <Button onClick={() => navigate('/pokedex')}>See pokemons</Button>
                     {/* <Button onClick={() => h.push('/pokedex')}>See pokemons</Button> */}
                 </div>
                 <div className={s.contentParallax}>
