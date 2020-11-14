@@ -7,7 +7,8 @@ import s from './Pokedex.module.scss';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import PokemonCard from '../../components/PokemonCard';
-import POKEMONS from '../../imp/pokemon';
+
+
 
 const usePokemons = () => {
 
@@ -67,8 +68,17 @@ const PokedexNew = () => {
                 <Heading tag="h1" className={s.contentTitle}>
                     {data.total} <b>Pokemons</b> page!
                  </Heading>
-                <div>
-                    {data.pokemons.map(item => <div>{item.name}</div>)}
+                <div className={s.pokemonList}>
+                    {data.pokemons.map((pokemon) => (
+                        <PokemonCard
+                            key={pokemon.id}
+                            name={pokemon.name}
+                            attack={pokemon.stats.attack}
+                            defense={pokemon.stats.defense}
+                            types={pokemon.types}
+                            img={pokemon.img}
+                        />
+                    ))}
                 </div>
             </Layout>
             <Footer />
