@@ -4,7 +4,7 @@ import s from './Footer.module.scss';
 const Footer = () => {
     return (
         <footer className={s.root}>
-            Footer
+            My Footer
         </footer>
     );
 };

@@ -1,22 +1,26 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './App.module.scss';
-import Header from './components/Header';
+/* import Header from './components/Header'; */
 import Footer from './components/Footer';
+import HomePage from "./pages/Home";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import PokedexNew from './pages/Pokedex';
+import { useRoutes } from "hookrouter";
+import routes from './routes';
+import NotFoundPage from './pages/NotFound';
+import Header from './components/Header';
 
 
 const App = () => {
-    console.log('something');
-
-    return (
+    const match = useRoutes(routes);
+    return match ? (
         <>
             <Header />
-            <div className={cn(s.content)}>
-                Here is some content
-            </div>
-            <Footer />
+            {match}
         </>
-    )
-}
+    ) : <NotFoundPage />;
+
+};
 
 export default App;
